@@ -91,11 +91,20 @@ Matrix addMatrix(Matrix* a, Matrix* b){
 Matrix transpose(Matrix* m){
     Matrix result = createMatrix(m->m_columns, m->m_rows);
 
+    for (int i = 0; i < m->m_rows; i++){
+        for (int j = 0; j < m->m_columns; j++){
+            result.matrix[j][i] = m->matrix[i][j];
+        }
+        
+    }
+    return result;
     
 }
 
-int main()
-{
+int main(){
+
+    // Testing
+
     Matrix A = createMatrix(2, 2);
 
     fillMatrix(&A, 0, 0, 6);
@@ -103,11 +112,26 @@ int main()
     fillMatrix(&A, 1, 0, 8);
     fillMatrix(&A, 1, 1, 3);
 
-    printMatrix(&A);
+    //printMatrix(&A);
 
     printf("\n");
 
     Matrix scalarA = scalarMultiplication(&A, 3);
+
+    // Creating a 2x3 matrix
+    Matrix C = createMatrix(2, 3);
+    fillMatrix(&C, 0, 0, 2);
+    fillMatrix(&C, 0, 1, 4);
+    fillMatrix(&C, 0, 2, 6);
+    fillMatrix(&C, 1, 0, 1);
+    fillMatrix(&C, 1, 1, 3);
+    fillMatrix(&C, 1, 2, 5);
+    printMatrix(&C);
+
+    Matrix cTranspose = transpose(&C);
+
+
+
 
     
 }
