@@ -9,7 +9,16 @@ int main(){
     A.fillMatrix(1, 0, 8);
     A.fillMatrix(1, 1, 3);
 
-   //A.printMatrix(2,2);
+    // This a test to check for an error case
+//    Matrix A(3,2);  // Error case: Dimensions don't match with 2x2 product
+//     A.fillMatrix(0, 0, 6);
+//     A.fillMatrix(0, 1, 4);
+//     A.fillMatrix(1, 0, 8);
+//     A.fillMatrix(1, 1, 3);
+//     A.fillMatrix(2, 0, 1);
+//     A.fillMatrix(2, 1, 9);
+
+
 
    Matrix B(2, 3);
    B.fillMatrix(0, 0, 1);
