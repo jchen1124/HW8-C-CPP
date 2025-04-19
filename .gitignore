@@ -1,0 +1,6 @@
+*.dSYM/
+*.o
+matrix_c
+hw8Matrix
+hw8Matrix.cpp
+.vscode
