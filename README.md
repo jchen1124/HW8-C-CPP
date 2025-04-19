@@ -9,4 +9,6 @@ The purpose of this software is to demonstrate the implementation of the basic m
 
 ## Files
 ### Matrix.h
+- Contains the class declaration for the Matrix class
+- Defines the public and private member functions and variables used for matrix operations.
 
