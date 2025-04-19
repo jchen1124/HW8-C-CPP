@@ -57,4 +57,16 @@ The purpose of this software is to demonstrate the implementation of the basic m
 
 ## How to run my code
 1. Clone the repository:
+    ```
     git clone https://github.com/jchen1124/HW8-C-CPP
+    ```
+    
+2. To run the C++ Version
+    ```
+    make && make run
+    ```
+
+    To run the C Version
+    ```
+    make matrix_c && ./matrix_c
+    ```
