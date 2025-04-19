@@ -12,11 +12,11 @@ The purpose of this software is to demonstrate the implementation of the basic m
 - Contains the class declaration for the Matrix class
 - Defines the public and private member functions and variables used for matrix operations.
 
-## Matrix.cpp
+### Matrix.cpp
 - Implements the member functions declared in Matrix.h, such as scalar multiplication, addition, transpose, and multiplication.
 - Manages dynamic memory allocation and deallocation.
 
-## Test.cpp
+### Test.cpp
 - Contains the main function to test and demonstrate the functionality of the Matrix class.
 - Runs examples for various matrix operations and prints the results.
 
