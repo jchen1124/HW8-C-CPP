@@ -101,6 +101,29 @@ Matrix transpose(Matrix* m){
     
 }
 
+Matrix multiply(Matrix* a, Matrix* b){
+    // The number of columns in A has to match the numbr of rows in b
+
+    if(a->m_columns != b->m_rows){
+        fprintf(stderr, "Error: Matrix dimensions do not match for addition.\n");
+        exit(EXIT_FAILURE);
+    }
+
+    Matrix result = createMatrix(a->m_rows, b->m_columns);
+
+    for (int i = 0; i < a->m_rows; i++){
+        for (int j = 0; j < b->m_columns; i++){
+            for (int x = 0; x < a->m_columns; x++){
+                result.matrix[i][j] += a->matrix[i][x] * b->matrix[x][j];
+            }
+            
+        }
+        
+    }
+    return result;
+    
+}
+
 int main(){
 
     // Testing
