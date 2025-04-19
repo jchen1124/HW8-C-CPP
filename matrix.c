@@ -102,8 +102,8 @@ Matrix transpose(Matrix* m){
 }
 
 Matrix multiply(Matrix* a, Matrix* b){
-    // The number of columns in A has to match the numbr of rows in b
 
+    // The number of columns in A has to match the numbr of rows in b
     if(a->m_columns != b->m_rows){
         fprintf(stderr, "Error: Matrix dimensions do not match for addition.\n");
         exit(EXIT_FAILURE);
@@ -112,7 +112,7 @@ Matrix multiply(Matrix* a, Matrix* b){
     Matrix result = createMatrix(a->m_rows, b->m_columns);
 
     for (int i = 0; i < a->m_rows; i++){
-        for (int j = 0; j < b->m_columns; i++){
+        for (int j = 0; j < b->m_columns; j++){
             for (int x = 0; x < a->m_columns; x++){
                 result.matrix[i][j] += a->matrix[i][x] * b->matrix[x][j];
             }
@@ -135,11 +135,17 @@ int main(){
     fillMatrix(&A, 1, 0, 8);
     fillMatrix(&A, 1, 1, 3);
 
+    Matrix B = createMatrix(2, 3);
+    fillMatrix(&B, 0, 0, 1);
+    fillMatrix(&B, 0, 1, 2);
+    fillMatrix(&B, 0, 2, 3);
+    fillMatrix(&B, 1, 0, 4);
+    fillMatrix(&B, 1, 1, 5);
+    fillMatrix(&B, 1, 2, 6);
+
     //printMatrix(&A);
 
-    printf("\n");
-
-    Matrix scalarA = scalarMultiplication(&A, 3);
+    //printf("\n");
 
     // Creating a 2x3 matrix
     Matrix C = createMatrix(2, 3);
@@ -149,9 +155,14 @@ int main(){
     fillMatrix(&C, 1, 0, 1);
     fillMatrix(&C, 1, 1, 3);
     fillMatrix(&C, 1, 2, 5);
-    printMatrix(&C);
 
+    Matrix scalarB = scalarMultiplication(&B, 3);
     Matrix cTranspose = transpose(&C);
+    Matrix product = multiply(&scalarB, &cTranspose);
+    Matrix result = addMatrix(&A, &product);
+
+    printMatrix(&result);
+
 
 
 

@@ -64,6 +64,13 @@ Matrix Matrix::scalarMultiplication(int scalar){
 }
 
 Matrix Matrix::addMatrix(const Matrix& other){
+
+    // output error message if dimensions dont match up
+    if (m_rows != other.m_rows || m_columns != other.m_columns) {
+        cerr << "Error: Matrix dimensions do not match for addition." << endl;
+        // Terminates program
+        exit(1);
+    }
     
     Matrix result(m_rows, m_columns);
     for (int i = 0; i < m_rows; ++i)
@@ -85,6 +92,12 @@ Matrix Matrix::transpose()  {
 }
 
 Matrix Matrix::multiply(const Matrix& other)  {
+    
+     if (m_columns != other.m_rows) {
+        std::cerr << "Error: Matrix dimensions do not match for multiplication." << std::endl;
+        exit(1);
+    }
+
     Matrix result(m_rows, other.m_columns);
     for (int i = 0; i < m_rows; ++i){
         for (int j = 0; j < other.m_columns; ++j){
