@@ -1,7 +1,7 @@
 # HW8 - C VS C++
 
-## Authoring
-Jason Chen
+## Author
+Jason Chen<br>
 CMSC 313 - MW 2:30 - 3:45
 
 ## Purpose Of Software 
