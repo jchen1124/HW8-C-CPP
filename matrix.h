@@ -13,7 +13,6 @@ class Matrix{
     Matrix(const Matrix& rhs);
 
     void fillMatrix(int row, int column, int value);
-    //int get(int rows, int columns);
     void printMatrix();
 
     // Functions type matrix to return a new matrix object
