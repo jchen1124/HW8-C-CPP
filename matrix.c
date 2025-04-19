@@ -163,7 +163,14 @@ int main(){
 
     printMatrix(&result);
 
-
+    // Clean up all allocated memory
+    deallocateMatrix(&A);
+    deallocateMatrix(&B);
+    deallocateMatrix(&C);
+    deallocateMatrix(&scalarB);
+    deallocateMatrix(&cTranspose);
+    deallocateMatrix(&product);
+    deallocateMatrix(&result);
 
 
 

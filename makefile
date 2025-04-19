@@ -1,5 +1,5 @@
 CXX = g++
-CXXFLAGS = -Wall
+CXXFLAGS = -Wall -g
 
 test: test.cpp matrix.o
 	$(CXX) $(CXXFLAGS) test.cpp matrix.o -o test
@@ -18,5 +18,8 @@ clean:
 run:
 	./test
 
-val:
-	$(CXX) -s test.cpp matrix.o -o test
+val_cpp: test
+	valgrind --leak-check=full ./test
+
+val_c: matrix_c
+	valgrind --leak-check=full ./matrix_c
